@@ -1,0 +1,178 @@
+<script>
+    
+    //задание 1
+    //Почему код даёт именно такие результаты?
+    var a = 1, b = 1, c, d;
+    c = ++a;             // - префиксная форма инкремента, сначала происходит изменение переменной, а потом возврат.
+    alert(c);           // 2 - 
+    d = b++;            // - постфиксная форма, возврат переменной, затем изменение.
+    alert(d);           // 1 
+    c = (2+ ++a);       // т.к. переменная а уже получила значение 2, затем увеличивается еще на 1 (2 + 3) и возвращает значение.
+    alert(c);           // 5
+    d = (2+ b++);       // переменная уже получила значение 2, снова возвратит инкремент(3) после ее вызова. (2 + 2)
+    alert(d);           // 4
+    alert(a);           // 3
+    alert(b);           // 3
+    
+    
+    
+    
+    
+    
+    // задание 2
+    //Чему будет равен x в примере ниже? 
+    var a = 2;
+    var x = 1 + (a *= 2); //1+(2*2)
+    alert(x);//5
+    
+
+    
+    
+    // задание 3
+    //Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
+    //если a и b положительные, вывести их разность;
+    //если а и b отрицательные, вывести их произведение;
+    //если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+    
+    var a = +prompt('a =');
+    var b = +prompt('b =');
+    if (a >= 0 && b >= 0){
+        alert(a - b);
+    } else if (a < 0 && b < 0){
+        alert(a * b);
+    } else {
+        alert(a + b);
+    }
+    
+    // задание 4
+    // Присвоить переменной а значение в промежутке [0..15].
+    //C помощью оператора switch организовать вывод чисел от a до 15.
+    //Можно сделать второй способ решения, используя рекурсию
+    
+     var a = +prompt('Введите число от 0 до 15');
+    switch (a){
+            case 0:
+        console.log(0)
+            case 1:
+        console.log('1')
+            case 2:
+        console.log('2')
+            case 3:
+        console.log('3')
+            case 4:
+        console.log('4')
+            case 5:
+        console.log('5')
+            case 6:
+        console.log('6')
+            case 7:
+        console.log('7')
+            case 8:
+        console.log('8')
+            case 9:
+        console.log('9')
+            case 10:
+        console.log('10')
+            case 11:
+        console.log('11')
+            case 12:
+        console.log('12')
+            case 13:
+        console.log('13')
+            case 14:
+        console.log('14')
+            case 15:
+        console.log('15')
+            break;
+        default:
+        document.write( "Некорректное значение" );
+            break;
+    }
+    
+    
+    // задание 5
+    //Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+    
+        var a = +prompt('Введите первое число');
+        var b = +prompt('Введите второе число');
+    
+        function sum(a,b){
+           return a + b;
+        }
+        
+        
+         function diff(a,b){
+           return a - b;
+        }
+        
+    
+        function prod(a,b){
+           return a * b;
+        }
+        
+    
+        function div(a,b){
+            if (b != 0){
+                return a / b;
+            }
+           return 0;
+        }
+    console.log(sum(a,b));
+    console.log(diff(a,b));
+    console.log(prod(a,b));
+    console.log(div(a,b));
+
+   // задание 6 
+   //Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).
+    
+        var arg1 = +prompt('Введите первое число');
+        var arg2 = +prompt('Введите второе число');
+        var operation = prompt('Введите знак +, -, *, /');
+    
+    function mathOperation(arg1, arg2, operation){
+        switch (operation){
+                case '+':
+                alert(sum(arg1,arg2));
+                break;
+                
+                case '-':
+                alert(diff(arg1,arg2));
+                break;
+                
+                case '*':
+                alert(prod(arg1,arg2));
+                break;
+                
+                case '/':
+                alert(div(arg1,arg2));
+                break;
+                
+                default:
+                alert( "Нет таких значений" );
+  
+                }      
+    }
+    
+    mathOperation(arg1, arg2, operation );
+    
+
+    // задание 6 
+    //С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+    
+        var val = +prompt('Введите первое число');
+        var pow = +prompt('Введите второе число');
+    
+         function power(val, pow){
+        if (pow == 1){
+                return val;
+        } else {
+            return val * power(val, pow - 1);
+        }
+
+     }
+        alert(power(val,pow));
+    
+    
+</script>
+
+
